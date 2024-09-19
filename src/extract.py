@@ -11,7 +11,9 @@ import os
 
 # import variables de ambientes
 
-
+user = os.environ.get('POSTGRES_USER')
+password = os.environ.get('POSTGRES_PASSWORD')
+banco = os.environ.get('POSTGRES_DB')
 
 # -------------------- CÓDIGO - Obter cotação dos ativos -------------------- 
 commodities = ['CL=F', 'GC=F', 'SI=F']
