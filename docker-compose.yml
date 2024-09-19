@@ -1,0 +1,25 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:17rc1-alpine3.19
+    restart: always
+    container_name: dw_proj_postgres
+    shm_size: 128mb    
+    env_file: ./.env
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres-volume:
+
