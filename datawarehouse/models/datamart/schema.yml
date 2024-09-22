@@ -1,0 +1,39 @@
+
+
+
+
+
+
+version: 2
+
+sources:
+  - name: dw_proj
+    schema: dbfinance
+    tables: 
+      - name: dm_commodities
+        description: "Tabela que contém dados históricos de commodities"
+        columns:
+          - name: data
+            description: "Data da dia dos registros"
+          - name: abertura
+            description: "Preço de abertura da commodity"
+          - name: alta
+            description: "Preço de alta da commodity"
+          - name: baixa
+            description: "Preço de baixa da commodity"
+          - name: fechada
+            description: "Preço final da commodity"
+          - name: simbolo
+            description: "Código da commodity"
+
+      - name: dm_movimentacao_commodities
+        description: "Tabela seed"
+        columns:
+          - name: data
+            description: "Data da transação"
+          - name: simbolo
+            description: "Símbolo da commodity"
+          - name: acao
+            description: "Tipo de transação (buy/sell)"
+          - name: quantidade
+            description: "Quantidade transacionada"
